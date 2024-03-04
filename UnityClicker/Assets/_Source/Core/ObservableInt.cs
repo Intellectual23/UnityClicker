@@ -6,10 +6,12 @@ namespace _Source.Core
   {
     private int _value;
     public Action<int> OnClick;
+
     public ObservableInt(int value)
     {
       _value = value;
     }
+
     public int Value
     {
       get { return _value; }
