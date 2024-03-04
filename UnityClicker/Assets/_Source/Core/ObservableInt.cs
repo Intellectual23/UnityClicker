@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public class ObservableInt : MonoBehaviour
+namespace _Source.Core
 {
-    // Start is called before the first frame update
-    void Start()
+  public class ObservableInt
+  {
+    private int _value;
+    public Action<int> OnClick;
+    public ObservableInt(int value)
     {
-        
+      _value = value;
     }
-
-    // Update is called once per frame
-    void Update()
+    public int Value
     {
-        
+      get { return _value; }
+      set
+      {
+        OnClick?.Invoke(value);
+        _value = value;
+      }
     }
+  }
 }
