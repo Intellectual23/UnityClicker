@@ -28,5 +28,33 @@ namespace _Source.Core
     {
       return _resourcesInfo[r];
     }
+
+    public ObservableInt GetProdLvl(GameResource r)
+    {
+      if (r == GameResource.Humans)
+      {
+        return _resourcesInfo[GameResource.HumansProdLvl];
+      }
+
+      if (r == GameResource.Food)
+      {
+        return _resourcesInfo[GameResource.HumansProdLvl];
+      }
+      
+      if (r == GameResource.Wood)
+      {
+        return _resourcesInfo[GameResource.WoodProdLvl];
+      }
+      
+      if (r == GameResource.Stone)
+      {
+        return _resourcesInfo[GameResource.StoneProdLvl];
+      }
+      if (r == GameResource.Gold)
+      {
+        return _resourcesInfo[GameResource.GoldProdLvl];
+      }
+      return new ObservableInt(0);
+    }
   }
 }
