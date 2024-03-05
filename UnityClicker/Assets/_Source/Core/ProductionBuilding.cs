@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine.UI;
 using UnityEngine;
 
 namespace _Source.Core
@@ -8,19 +10,26 @@ namespace _Source.Core
   {
     public GameResource _resource;
     public ResourceBank _resourceBank;
-    public float _productionTime = 4;
-    private bool isBlocked = false;
-
+    public Button _button;
+    public Slider _slider;
+    public float _productionTime;
     private IEnumerator Coroutine()
     {
-      isBlocked = true;
-      yield return new WaitForSeconds(_productionTime);
+      _button.interactable = false;
+      //yield return new WaitForSeconds(_productionTime);
+      float curTime = 0;
+      while (curTime < _productionTime)
+      {
+        curTime += Time.deltaTime;
+        _slider.value = (curTime / _productionTime);
+        yield return null;
+      }
       _resourceBank.ChangeResource(_resource, 1);
-      isBlocked = false;
+      _button.interactable = true;
     }
     public void ButtonClick()
     {
-      if (!isBlocked)
+      if (_button.interactable)
       {
         StartCoroutine(Coroutine());
       }
