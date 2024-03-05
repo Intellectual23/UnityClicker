@@ -9,7 +9,7 @@ namespace _Source.Game
   public class ShopPanel : MonoBehaviour
   {
     public ResourceBank _resourceBank;
-    
+
     public void UpgradeHumansProdLvl()
     {
       _resourceBank.ChangeResource(GameResource.HumansProdLvl, 1);

@@ -22,7 +22,7 @@ namespace _Source.Core
 
     private void UpdateText(int newValue)
     {
-      _text.text = newValue.ToString();
+      _text.text = _resourceType.ToString() + ": " + newValue.ToString();
     }
   }
 }
