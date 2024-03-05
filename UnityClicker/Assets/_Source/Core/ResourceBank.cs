@@ -12,6 +12,11 @@ namespace _Source.Core
       { GameResource.Wood, new ObservableInt(0) },
       { GameResource.Stone, new ObservableInt(0) },
       { GameResource.Gold, new ObservableInt(0) },
+      { GameResource.HumansProdLvl, new ObservableInt(0) },
+      { GameResource.FoodProdLvl, new ObservableInt(0) },
+      { GameResource.WoodProdLvl, new ObservableInt(0) },
+      { GameResource.StoneProdLvl, new ObservableInt(0) },
+      { GameResource.GoldProdLvl, new ObservableInt(0) },
     };
 
     public void ChangeResource(GameResource r, int v)
